@@ -1,0 +1,39 @@
+:root{
+  --corRed: hsl(14, 86%, 42%);
+  --corGreen: hsl(159, 69%, 38%);
+  --corRose1: hsl(20, 50%, 98%);
+  --corRose2: hsl(13, 31%, 94%);
+  --corRose3: hsl(14, 25%, 72%);
+  --corRose4: hsl(7, 20%, 60%);
+  --corRose5: hsl(12, 20%, 44%);
+  --corRose6: hsl(14, 65%, 9%);
+  --fontS: 400 1rem "Red Hat Text";
+  --fontM: 600 1rem "Red Hat Text";
+  --fontG: 700 2rem "Red Hat Text";
+}
+
+*{
+  box-sizing: border-box;
+}
+
+body,h1,h2,h3, img{
+  padding: 0;
+  margin: 0;
+}
+
+img{
+  display: block;
+  max-width: 100%;
+}
+
+body{
+  background-color: var(--corRose2);
+}
+
+.container{
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+}
+

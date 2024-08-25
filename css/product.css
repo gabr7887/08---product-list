@@ -1,0 +1,35 @@
+.produto{
+  max-width: 300px;
+  position: relative;
+}
+
+.produto img{
+  border-radius: 8px;
+}
+
+.produto.active img{
+  border: 2px solid var(--corRed);
+}
+
+.product-info{
+  margin-top: 24px;
+}
+
+.category{
+ font: var(--fontS);
+ font-size: 0.875rem;
+ color: var(--corRose5);
+}
+
+.product-name, .price{
+  font: var(--fontM);
+}
+
+.product-name{
+  color: var(--corRose6);
+}
+
+.price{
+  color: var(--corRed);
+}
+

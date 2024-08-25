@@ -1,0 +1,8 @@
+.products{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+}
+
+.products h1{
+  grid-column: 1/-1;
+}

@@ -1,0 +1,73 @@
+.produto-button{
+  position: absolute;
+  left: 75px;
+  bottom: 64px;
+  cursor: pointer;
+}
+
+.produto-button .button-inactive{
+  display: flex;
+  width: 150px;
+  gap: 8px;
+  background-color: var(--corRose1);
+  padding: 8px 16px;
+  border: 1px solid var(--corRose4);
+  border-radius: 40px;  
+}
+
+.produto-button .button-inactive span{
+  font: var(--fontM);
+  color: var(--corRose6);
+}
+
+.produto-button:hover .button-inactive{
+  border-color: var(--corRed);
+}
+
+.produto-button:hover .button-inactive span{
+  color: var(--corRed);
+}
+
+.produto.active .button-inactive{
+  display: none;
+}
+
+.button-active{
+  display: none;
+  gap: 8px;
+  width: 150px;
+  justify-content: space-between;
+  background-color: var(--corRed);
+  padding: 8px 16px;
+  border-radius: 40px;
+}
+
+.button-active div{
+  display: flex;
+  padding: 4px;
+  border: 1px solid var(--corRose1);
+  border-radius: 50%;
+}
+
+.button-active div{
+  cursor: pointer;
+}
+
+.button-active div:hover{
+  background-color: var(--corRose1);
+}
+
+.button-active span{
+  user-select: none;
+  font: var(--fontM);
+  color: var(--corRose1);
+}
+
+.produto-button.active{
+  cursor:initial;
+}
+
+.produto.active .button-active{
+  display: flex;
+}
+
