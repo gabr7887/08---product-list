@@ -1,0 +1,75 @@
+.popup-div{
+  background-color: var(--corRose1);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+  padding: 32px;
+  border-radius: 12px;
+  width: 70%;
+}
+
+.popup-confirm{
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 20px;
+}
+
+.popup-confirm div{
+  margin-bottom: 8px;
+}
+
+.popup-confirm span{
+  font: var(--fontS);
+  color: var(--corRose3);
+}
+
+.popup-products{
+  background-color: var(--corRose2);
+  padding: 20px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.popup-product{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--corRose3);
+}
+
+.popup-product > div{
+  display: flex;
+  gap: 8px;
+  width: 100%;
+}
+
+
+.popup-product-info .title{
+  font-size: 1rem;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.popup-product-img img{
+  max-width: 64px;
+  border-radius: 8px;
+}
+
+.popup-product .cart-product-total{
+  color: var(--corRose6);
+}
+
+.popup-div .button{
+  margin-top: 20px;
+}
+
+@media (width < 700px) {
+  
+}

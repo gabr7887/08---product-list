@@ -82,17 +82,17 @@
   border-radius: 50%;
 }
 
-.cart-price{
+.final-price{
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.cart-price span{
+.final-price span{
   font: var(--fontS);
 }
 
-.cart-price .cart-total{
+.final-price .final-total{
   font: var(--fontG);
   font-size: 1.5rem;
 }
