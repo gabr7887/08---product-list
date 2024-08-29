@@ -47,13 +47,13 @@
   display: flex;
   gap: 8px;
   width: 100%;
+  overflow: hidden;
 }
 
 
 .popup-product-info .title{
   font-size: 1rem;
   text-overflow: ellipsis;
-  overflow: hidden;
   white-space: nowrap;
 }
 
@@ -71,5 +71,13 @@
 }
 
 @media (width < 700px) {
-  
+  .popup-div{
+    width: 100%;
+    transform: none;
+    left: 0px;
+    top: initial;
+    bottom: 0px;
+
+  }
+
 }
