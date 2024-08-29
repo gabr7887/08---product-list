@@ -8,6 +8,7 @@
   padding: 32px;
   border-radius: 12px;
   width: 70%;
+  display: none;
 }
 
 .popup-confirm{
@@ -68,6 +69,10 @@
 
 .popup-div .button{
   margin-top: 20px;
+}
+
+body.active .popup-div{
+display: block;
 }
 
 @media (width < 700px) {
