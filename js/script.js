@@ -1,11 +1,6 @@
 import loadProducts from './loadProducts.js';
 import createProducts from './createProducts.js';
 
-const loadProduct = new loadProducts('../data.json');
+const loadProduct = new loadProducts('../data.json', 'products');
 
-const products = loadProduct.load();
-console.log(products);
-
-const createProduct = new createProducts(products, 'productsContainer');
-
-createProduct.generateHtmlElement();
+loadProduct.load();

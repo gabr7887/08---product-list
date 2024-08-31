@@ -6,7 +6,7 @@ export default class createProducts {
 
   generateHtmlElement() {
     const htmlElements = this.products.foreach((element) => {
-      document.createElement('div')
+      const elemento = document.createElement('div')
         .innerHTML(`<img src="./assets/images/image-waffle-desktop.jpg" alt="">
         <div class="produto-button">
           <div class="button-inactive">
@@ -28,6 +28,8 @@ export default class createProducts {
           <h2 class="product-name">Waffle with Berries</h2>
           <span class="price">$6.50</span>
         </div>`);
+      this.container.appendChild(elemento);
     });
+    htmlElements();
   }
 }
