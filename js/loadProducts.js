@@ -1,4 +1,5 @@
 import createButton from './createButton.js';
+import createProductInfo from './createProductInfo.js';
 
 export default class loadProducts {
   constructor(caminho, container) {
@@ -16,9 +17,10 @@ export default class loadProducts {
       const elementoImg = document.createElement('img');
       elementoImg.setAttribute('src', dado.image.desktop);
       const button = new createButton();
-
+      const infoDiv = new createProductInfo();
       elemento.appendChild(elementoImg);
       elemento.appendChild(button.load());
+      elemento.appendChild(infoDiv.load(dado));
       this.container?.appendChild(elemento);
     });
   }
