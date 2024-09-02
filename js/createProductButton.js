@@ -1,7 +1,7 @@
-export default class createButton {
+export default class createProductButton {
   constructor() {}
 
-  load() {
+  load(quantidade) {
     const buttonContainer = document.createElement('div');
     buttonContainer.classList.add('produto-button');
     const buttonInactive = document.createElement('div');
@@ -16,6 +16,7 @@ export default class createButton {
     const buttonActive = document.createElement('div');
     buttonActive.classList.add('button-active');
     const buttonDecrementDiv = document.createElement('div');
+    buttonDecrementDiv.classList.add('buttonDecrement');
     const buttonDecrementImg = document.createElement('img');
     buttonDecrementImg.setAttribute(
       'src',
@@ -23,9 +24,10 @@ export default class createButton {
     );
     buttonDecrementDiv.appendChild(buttonDecrementImg);
     const buttonActiveSpan = document.createElement('span');
-    buttonActiveSpan.innerText = '1';
+    buttonActiveSpan.innerText = `${quantidade}`;
     buttonActiveSpan.classList.add('quantidade');
     const buttonincrementDiv = document.createElement('div');
+    buttonincrementDiv.classList.add('buttonIncrement');
     const buttonincrementImg = document.createElement('img');
     buttonincrementImg.setAttribute(
       'src',

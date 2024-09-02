@@ -7,6 +7,8 @@
   border-radius: 40px;
   background-color: var(--corRed);
   cursor: pointer;
+  user-select: none;
+
 }
 
 .button:hover{
@@ -18,6 +20,7 @@
   left: 20%;
   bottom: 64px;
   cursor: pointer;
+  user-select: none;
 }
 
 .produto-button .button-inactive{
