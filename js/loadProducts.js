@@ -1,11 +1,13 @@
 import createProductButton from './createProductButton.js';
 import createProductInfo from './createProductInfo.js';
 import buttonProductLogic from './buttonProductLogic.js';
+import cart from './cart.js';
 
 export default class loadProducts {
   constructor(caminho, container) {
     this.caminho = caminho;
     this.container = document.getElementById(container);
+    this.cart = new cart();
   }
 
   async load() {
@@ -27,8 +29,9 @@ export default class loadProducts {
       elemento.appendChild(button.load(dado.quantidade));
       elemento.appendChild(infoDiv.load(dado));
       this.container?.appendChild(elemento);
+      this.cart.elements.push(dado);
     });
-    const buttons = new buttonProductLogic();
+    const buttons = new buttonProductLogic(this.cart);
     buttons.init();
   }
 }
