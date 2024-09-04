@@ -7,6 +7,7 @@ export default class cartProduct {
     console.log(this.element);
     const productContainer = document.createElement('div');
     productContainer.classList.add('cart-product');
+    productContainer.classList.add(this.element.id);
     const infos = document.createElement('div');
     infos.classList.add('cart-product-infos');
     const name = document.createElement('h3');

@@ -9,19 +9,42 @@ export default class cart {
     this.elementsOn = [];
   }
 
-  cartAdd(element, i) {
+  cartAdd(element) {
     console.log(this.elements);
     const product = new cartProduct(element);
-    const final = { index: i, elem: product.create() };
-    this.elementsOn.push(final);
-    this.cartProductsContainer.appendChild(final.elem);
+    this.cartProductsContainer.appendChild(product.create());
+    this.elementsOn.push(1);
   }
 
-  removeCart(index) {
-    console.log('aconteceu');
-    console.log(this.elementsOn.indexOf({ index }));
-    this.cartProductsContainer.removeChild(this.elementsOn[index]);
-    this.elementsOn.slice(this.elementsOn.indexOf({ index }));
-    console.log('chegou ao final');
+  removeCart(id) {
+    this.cartProductsContainer.removeChild(
+      this.cartProductsContainer.querySelector(`.${id}`),
+    );
+    this.elementsOn.pop();
+  }
+
+  updateCartProduct(id, qte, price) {
+    console.log(id, qte, price);
+    const product = this.cartProductsContainer.querySelector(`.${id}`);
+    const quantidade = product.querySelector('.cart-product-quantity');
+    quantidade.innerText = +qte;
+    product.querySelector('.cart-product-total').innerText = (
+      +qte * price
+    ).toFixed(2);
+    this.updateCartTotal();
+  }
+
+  updateCartTotal() {
+    const TotalPrice = this.cartElement.querySelector('.final-total');
+    const Prices = Array.from(
+      this.cartProductsContainer.querySelectorAll('.cart-product-total'),
+    );
+    console.log(Prices);
+    let result = 0;
+    Prices.forEach((element) => {
+      result += +element.innerText;
+    });
+    console.log(result);
+    TotalPrice.innerText = result.toFixed(2);
   }
 }

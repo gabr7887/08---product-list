@@ -5,12 +5,17 @@ export default class buttonProductLogic {
   }
 
   increment() {
-    this.buttons.forEach((element) => {
+    this.buttons.forEach((element, index) => {
       const qte = element.querySelector('.quantidade');
       element
         .querySelector('.buttonIncrement')
         .addEventListener('click', () => {
           qte.innerText = +qte.innerText + 1;
+          this.cart.updateCartProduct(
+            this.cart.elements[index].id,
+            qte.innerText,
+            this.cart.elements[index].price,
+          );
         });
     });
   }
@@ -23,9 +28,14 @@ export default class buttonProductLogic {
         .addEventListener('click', () => {
           if (qte.innerText > 1) {
             qte.innerText = +qte.innerText - 1;
+            this.cart.updateCartProduct(
+              this.cart.elements[index].id,
+              qte.innerText,
+              this.cart.elements[index].price,
+            );
           } else {
+            this.cart.removeCart(this.cart.elements[index].id);
             this.remove(element, qte);
-            this.cart.removeCart(index);
           }
         });
     });
@@ -34,6 +44,11 @@ export default class buttonProductLogic {
   remove(element, qte) {
     element.parentNode.classList.remove('active');
     qte.innerText = 0;
+    this.cart.updateCartTotal();
+    if (!this.cart.elementsOn.length) {
+      console.log('ocorreu');
+      this.cart.cartElement.classList.remove('active');
+    }
   }
 
   ativate() {
@@ -47,7 +62,12 @@ export default class buttonProductLogic {
           if (!this.cart.cartElement.classList.contains('active')) {
             this.cart.cartElement.classList.add('active');
           }
-          this.cart.cartAdd(this.cart.elements[index], index);
+          this.cart.cartAdd(this.cart.elements[index]);
+          this.cart.updateCartProduct(
+            this.cart.elements[index].id,
+            qte.innerText,
+            this.cart.elements[index].price,
+          );
         });
     });
   }

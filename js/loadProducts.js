@@ -10,12 +10,21 @@ export default class loadProducts {
     this.cart = new cart();
   }
 
+  normal(string) {
+    return string
+      .trim()
+      .replaceAll(' ', '')
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '');
+  }
+
   async load() {
     const data = await fetch(this.caminho);
     const json = await data.json();
     const dados = Array.from(json);
     const dado2 = dados.map((dado) => {
       dado.quantidade = 0;
+      dado.id = this.normal(dado.name);
       return dado;
     });
     dado2.forEach((dado) => {
