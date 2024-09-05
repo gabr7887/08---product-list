@@ -2,6 +2,7 @@ export default class buttonProductLogic {
   constructor(cart) {
     this.buttons = document.querySelectorAll('.produto-button');
     this.cart = cart;
+    this.remove = this.remove.bind(this);
   }
 
   increment() {
@@ -50,25 +51,6 @@ export default class buttonProductLogic {
     }
   }
 
-  removeFromCart() {
-    console.log(this.buttons);
-    this.buttons.forEach((element, index) => {
-      const qte = element.querySelector('.quantidade');
-      this.cart.removeCart(this.cart.elements[index].id);
-      this.remove(element, qte);
-    });
-  }
-
-  addRemoveToCart() {
-    const buttons = document.querySelectorAll('.cart-remove');
-    buttons.forEach((element) => {
-      element.removeEventListener('click', this.removeFromCart);
-    });
-    buttons.forEach((element) => {
-      element.addEventListener('click', this.removeFromCart);
-    });
-  }
-
   ativate() {
     this.buttons.forEach((element, index) => {
       element
@@ -80,13 +62,18 @@ export default class buttonProductLogic {
           if (!this.cart.cartElement.classList.contains('active')) {
             this.cart.cartElement.classList.add('active');
           }
-          this.cart.cartAdd(this.cart.elements[index]);
-          this.addRemoveToCart();
+          this.cart.cartAdd(
+            this.cart.elements[index],
+            this.remove,
+            element,
+            qte,
+          );
           this.cart.updateCartProduct(
             this.cart.elements[index].id,
             qte.innerText,
             this.cart.elements[index].price,
           );
+          this.cart.updateCartTotal();
         });
     });
   }

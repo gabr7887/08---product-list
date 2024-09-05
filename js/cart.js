@@ -9,11 +9,15 @@ export default class cart {
     this.elementsOn = [];
   }
 
-  cartAdd(element) {
+  cartAdd(element, remove, button, qte) {
     console.log(this.elements);
-    const product = new cartProduct(element);
-    this.cartProductsContainer.appendChild(product.create());
+    const product = new cartProduct(element).create();
+    this.cartProductsContainer.appendChild(product);
     this.elementsOn.push(1);
+    product.querySelector('.cart-remove').addEventListener('click', () => {
+      this.removeCart(element.id);
+      remove(button, qte);
+    });
   }
 
   removeCart(id) {
@@ -24,7 +28,6 @@ export default class cart {
   }
 
   updateCartProduct(id, qte, price) {
-    console.log(id, qte, price);
     const product = this.cartProductsContainer.querySelector(`.${id}`);
     const quantidade = product.querySelector('.cart-product-quantity');
     quantidade.innerText = +qte;
@@ -39,12 +42,10 @@ export default class cart {
     const Prices = Array.from(
       this.cartProductsContainer.querySelectorAll('.cart-product-total'),
     );
-    console.log(Prices);
     let result = 0;
     Prices.forEach((element) => {
       result += +element.innerText;
     });
-    console.log(result);
-    TotalPrice.innerText = result.toFixed(2);
+    TotalPrice.innerText = `$${result.toFixed(2)}`;
   }
 }

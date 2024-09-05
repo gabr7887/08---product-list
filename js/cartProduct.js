@@ -4,7 +4,6 @@ export default class cartProduct {
   }
 
   create() {
-    console.log(this.element);
     const productContainer = document.createElement('div');
     productContainer.classList.add('cart-product');
     productContainer.classList.add(this.element.id);
@@ -15,7 +14,7 @@ export default class cartProduct {
     infos.appendChild(name);
     const priceDiv = document.createElement('div');
     const quantitySpan = document.createElement('span');
-    quantitySpan.innerText = `${this.element.quantidade}`;
+    quantitySpan.innerText = `${this.element.quantidade + 1}`;
     quantitySpan.classList.add('cart-product-quantity');
     priceDiv.appendChild(quantitySpan);
     const price = document.createElement('span');
