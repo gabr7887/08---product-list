@@ -46,9 +46,27 @@ export default class buttonProductLogic {
     qte.innerText = 0;
     this.cart.updateCartTotal();
     if (!this.cart.elementsOn.length) {
-      console.log('ocorreu');
       this.cart.cartElement.classList.remove('active');
     }
+  }
+
+  removeFromCart() {
+    console.log(this.buttons);
+    this.buttons.forEach((element, index) => {
+      const qte = element.querySelector('.quantidade');
+      this.cart.removeCart(this.cart.elements[index].id);
+      this.remove(element, qte);
+    });
+  }
+
+  addRemoveToCart() {
+    const buttons = document.querySelectorAll('.cart-remove');
+    buttons.forEach((element) => {
+      element.removeEventListener('click', this.removeFromCart);
+    });
+    buttons.forEach((element) => {
+      element.addEventListener('click', this.removeFromCart);
+    });
   }
 
   ativate() {
@@ -63,6 +81,7 @@ export default class buttonProductLogic {
             this.cart.cartElement.classList.add('active');
           }
           this.cart.cartAdd(this.cart.elements[index]);
+          this.addRemoveToCart();
           this.cart.updateCartProduct(
             this.cart.elements[index].id,
             qte.innerText,
