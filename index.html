@@ -12,7 +12,7 @@
   <title>Product list with cart</title>
 </head>
 
-<body>
+<body class="active">
 
   <main class="container">
     <div class="products" id="products">
@@ -28,7 +28,6 @@
         </div>
         <div class="cart-active">
           <div class="cart-products">
-
           </div>
           <div class="cart-active-info">
             <div class="final-price">
@@ -46,45 +45,34 @@
     </div>
   </main>
 
-  <div class="popup-div">
-    <div class="popup-confirm">
-      <div><img src="./assets/images/icon-order-confirmed.svg" alt=""></div>
-      <h1 class="title">Order Confirmed</h1>
-      <span>We hope you enjoy your food!</span>
-    </div>
-    <div class="popup-products" id="productsContainer">
-      <div class="popup-product">
-        <div>
-          <div class="popup-product-img">
-            <img src="./assets/images/image-waffle-thumbnail.jpg" alt="">
+  <div class="popup-background">
+    <div class="popup-div">
+      <div class="popup-confirm">
+        <div><img src="./assets/images/icon-order-confirmed.svg" alt=""></div>
+        <h1 class="title">Order Confirmed</h1>
+        <span>We hope you enjoy your food!</span>
+      </div>
+      <div class="popup-products" id="PopupProductsContainer">
+        <div class="popup-product">
+          <div>
+            <div class="popup-product-img">
+              <img src="./assets/images/image-waffle-thumbnail.jpg" alt="">
+            </div>
+            <div class="popup-product-info">
+              <h2 class="title">Waffle with Berries</h2>
+              <span class="cart-product-quantity">1x</span>
+              <span class="cart-product-price">@ 6.50</span>
+            </div>
           </div>
-          <div class="popup-product-info">
-            <h2 class="title">Waffle with Berries</h2>
-            <span class="cart-product-quantity">1x</span>
-            <span class="cart-product-price">@ 6.50</span>
-          </div>
+          <span class="cart-product-total">$6.50</span>
         </div>
-        <span class="cart-product-total">$6.50</span>
-      </div>
-      <div class="popup-product">
-        <div>
-          <div class="popup-product-img">
-            <img src="./assets/images/image-waffle-thumbnail.jpg" alt="">
-          </div>
-          <div class="popup-product-info">
-            <h2 class="title">Waffle with Berries</h2>
-            <span class="cart-product-quantity">1x</span>
-            <span class="cart-product-price">@ 6.50</span>
-          </div>
+        <div class="final-price">
+          <span>Order Total</span>
+          <span class="final-total" id="finalPrice">$0.0</span>
         </div>
-        <span class="cart-product-total">$6.50</span>
       </div>
-      <div class="final-price">
-        <span>Order Total</span>
-        <span class="final-total">$0.0</span>
-      </div>
+      <button class="button">Start new order</button>
     </div>
-    <button class="button">Start new order</button>
   </div>
 
   <!-- <div style="display: none;" class="attribution">

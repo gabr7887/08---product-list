@@ -13,7 +13,6 @@ export default class createProductInfo {
     const price = document.createElement('span');
     price.classList.add('price');
     price.innerText = `$${dado.price.toFixed(2)}`;
-
     infoDiv.appendChild(category);
     infoDiv.appendChild(name);
     infoDiv.appendChild(price);

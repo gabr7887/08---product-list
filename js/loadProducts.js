@@ -2,12 +2,15 @@ import createProductButton from './createProductButton.js';
 import createProductInfo from './createProductInfo.js';
 import buttonProductLogic from './buttonProductLogic.js';
 import cart from './cart.js';
+import popup from './popup.js';
 
 export default class loadProducts {
   constructor(caminho, container) {
     this.caminho = caminho;
     this.container = document.getElementById(container);
-    this.cart = new cart();
+    this.pop = new popup();
+    this.pop.activate();
+    this.cart = new cart(this.pop);
   }
 
   normal(string) {

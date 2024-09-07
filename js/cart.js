@@ -1,18 +1,23 @@
 import cartProduct from './cartProduct.js';
+import popupProduct from './popupProduct.js';
 
 export default class cart {
-  constructor() {
+  constructor(pop) {
     this.cartElement = document.getElementById('cart');
     this.cartProductsContainer =
       this.cartElement.querySelector('.cart-products');
     this.elements = [];
     this.elementsOn = [];
+    this.pop = pop;
   }
 
   cartAdd(element, remove, button, qte) {
-    console.log(this.elements);
     const product = new cartProduct(element).create();
     this.cartProductsContainer.appendChild(product);
+    console.log(element);
+    const productPop = new popupProduct(element).create();
+    console.log(productPop);
+    this.pop.container.appendChild(productPop);
     this.elementsOn.push(1);
     product.querySelector('.cart-remove').addEventListener('click', () => {
       this.removeCart(element.id);
