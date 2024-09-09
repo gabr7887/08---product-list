@@ -4,15 +4,14 @@ export default class popupProduct {
   }
 
   create() {
-    console.log('aconteceu');
     const divContainer = document.createElement('div');
     divContainer.classList.add(`popup-product`);
     divContainer.classList.add(this.element.id);
     const firstDiv = document.createElement('div');
-    const divImg = document.querySelector('div');
+    const divImg = document.createElement('div');
     divImg.classList.add('popup-product-img');
     const productImg = document.createElement('img');
-    productImg.src = this.element.image.thumbnail;
+    productImg.setAttribute('src', this.element.image.thumbnail);
     divImg.appendChild(productImg);
     firstDiv.appendChild(divImg);
     const productInfoDiv = document.createElement('div');
@@ -25,7 +24,7 @@ export default class popupProduct {
     quantityInfo.classList.add('cart-product-quantity');
     const price = document.createElement('span');
     price.classList.add('cart-product-price');
-    price.innerText = `$${this.element.price.toFixed(2)}`;
+    price.innerText = `@ ${this.element.price.toFixed(2)}`;
     productInfoDiv.appendChild(title);
     productInfoDiv.appendChild(quantityInfo);
     productInfoDiv.appendChild(price);

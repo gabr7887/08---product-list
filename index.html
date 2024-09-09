@@ -12,8 +12,7 @@
   <title>Product list with cart</title>
 </head>
 
-<body class="active">
-
+<body>
   <main class="container">
     <div class="products" id="products">
       <h1 class="title">Desserts</h1>
@@ -39,7 +38,7 @@
               <span>This is a <strong>carbon neutral</strong> delivery</span>
             </div>
           </div>
-          <button class="button">Confirm Order</button>
+          <button class="button" id="cartButton">Confirm Order</button>
         </div>
       </div>
     </div>
@@ -53,25 +52,12 @@
         <span>We hope you enjoy your food!</span>
       </div>
       <div class="popup-products" id="PopupProductsContainer">
-        <div class="popup-product">
-          <div>
-            <div class="popup-product-img">
-              <img src="./assets/images/image-waffle-thumbnail.jpg" alt="">
-            </div>
-            <div class="popup-product-info">
-              <h2 class="title">Waffle with Berries</h2>
-              <span class="cart-product-quantity">1x</span>
-              <span class="cart-product-price">@ 6.50</span>
-            </div>
-          </div>
-          <span class="cart-product-total">$6.50</span>
-        </div>
         <div class="final-price">
           <span>Order Total</span>
           <span class="final-total" id="finalPrice">$0.0</span>
         </div>
       </div>
-      <button class="button">Start new order</button>
+      <button class="button" id="finalButton">Start new order</button>
     </div>
   </div>
 

@@ -9,7 +9,6 @@ export default class loadProducts {
     this.caminho = caminho;
     this.container = document.getElementById(container);
     this.pop = new popup();
-    this.pop.activate();
     this.cart = new cart(this.pop);
   }
 
